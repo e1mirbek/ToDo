@@ -11,6 +11,7 @@
 
 </head>
 <body>
+
 <div class="container mt-5">
     <h1 class="text-center">Список дел</h1>
     <form th:action="@{/add}" th:object="${newTodo}" method="post" class="mb-3">
@@ -18,6 +19,12 @@
             <input type="text" class="form-control" th:field="*{title}" placeholder="Добавить задачу">
             <button class="btn btn-primary" type="submit">Добавить</button>
         </div>
+    </form>
+
+    <form th:action="@{/removeAll}" method="post" class="text-center mb-4">
+        <button class="btn btn-danger" type="submit">
+            Удалить все задачи
+        </button>
     </form>
 
     <ul class="list-group">
@@ -31,5 +38,6 @@
         </li>
     </ul>
 </div>
+
 </body>
 </html>
